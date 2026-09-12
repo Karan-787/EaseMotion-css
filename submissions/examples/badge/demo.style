@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ease Badge Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="demo-container">
+        <h1>Glassmorphism Notification Badge Demo</h1>
+        
+        <div class="demo-grid">
+            <!-- Example 1: Standard Numeric Badge with Pulse -->
+            <div class="badge-wrapper">
+                <button class="demo-trigger">
+                    Messages
+                    <span class="ease-badge ease-badge-pulse">3</span>
+                </button>
+            </div>
+
+            <!-- Example 2: Status Dot Badge -->
+            <div class="badge-wrapper">
+                <div class="demo-icon-box">
+                    <span>Profile</span>
+                    <span class="ease-badge ease-badge-dot ease-badge-pulse"></span>
+                </div>
+            </div>
+
+            <!-- Example 3: Floating Positioned Badge -->
+            <div class="badge-wrapper">
+                <div class="demo-card">
+                    <span>Notifications</span>
+                    <span class="ease-badge ease-badge-floating">12</span>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
