@@ -1,0 +1,114 @@
+/* ==========================================
+   EaseMotion: Pure CSS Advanced Component v17
+   ========================================== */
+
+:root {
+  --em-v17-bg: #1e1b4b;
+  --em-v17-card-bg: rgba(30, 27, 75, 0.7);
+  --em-v17-primary: #818cf8;
+  --em-v17-accent: #c084fc;
+  --em-v17-text: #f8fafc;
+  --em-v17-duration: 0.4s;
+  --em-v17-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.em-v17-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: var(--em-v17-bg);
+  font-family: system-ui, -apple-system, sans-serif;
+  color: var(--em-v17-text);
+  margin: 0;
+}
+
+.em-v17-card {
+  position: relative;
+  width: 360px;
+  padding: 2.5rem;
+  background: var(--em-v17-card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.5rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  transition: transform var(--em-v17-duration) var(--em-v17-ease),
+              box-shadow var(--em-v17-duration) var(--em-v17-ease);
+}
+
+.em-v17-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(192, 132, 252, 0.15) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity var(--em-v17-duration) ease;
+  pointer-events: none;
+}
+
+.em-v17-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 25px rgba(129, 140, 248, 0.2);
+}
+
+.em-v17-card:hover::before {
+  opacity: 1;
+}
+
+.em-v17-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.025em;
+  background: linear-gradient(135deg, var(--em-v17-primary), var(--em-v17-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.em-v17-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #94a3b8;
+  margin-bottom: 2rem;
+}
+
+.em-v17-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.875rem 1.5rem;
+  background: linear-gradient(135deg, var(--em-v17-primary), var(--em-v17-accent));
+  color: #fff;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(129, 140, 248, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.em-v17-action:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 6px 20px rgba(192, 132, 252, 0.6);
+  transform: translateY(-2px);
+}
+
+.em-v17-action:active {
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .em-v17-card, .em-v17-card::before, .em-v17-action {
+    transition: none;
+    transform: none;
+  }
+  .em-v17-card:hover {
+    transform: none;
+  }
+}
